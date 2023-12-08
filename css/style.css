@@ -1,0 +1,284 @@
+/*=======Підключення шрифтів=======*/
+@import url("fonts.css");
+
+/*=======Скидання стилів=======*/
+@import url("reset.css");
+
+
+
+
+body {
+	font-family: 'Poppins', sans-serif;
+	color: #fff;
+}
+
+
+/*--container--*/
+.container {
+	/*ставим по центру карточку*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-color: #131313;
+	/*ставим по центру карточку*/
+
+
+}
+
+
+/*--card--*/
+.card {
+	width: 320px;
+	height: 500px;
+	background-color: #232323;
+	border-radius: 20px;
+	position: relative;
+	/*спрятали круг под кроссовок */
+	z-index: 1;
+	/*спрятали круг под кроссовок */
+}
+
+.card::before {
+	width: 280px;
+	height: 280px;
+	border-radius: 100% 100% 100% 100% / 100% 100% 0% 100%;
+	transform: rotateZ(180deg);
+	background-color: #fff;
+	content: "";
+	display: inline-block;
+	position: absolute;
+	background: linear-gradient(to bottom right, #ffff99 0%, #cc00ff 100%);
+	transition: 0.8s;
+}
+
+.card:hover::before {
+	border-radius: 100% 100% 100% 100% / 100% 100% 0% 0%;
+	width: 318px;
+	/*меняем форму фона под кроссовком при наведении */
+	height: 290px;
+}
+
+
+/*<!--оболочка foto-->*/
+.img-crosi {
+	position: relative;
+	/*вытащили кроссовок поверх круга*/
+	z-index: 2;
+	/*вытащили кроссовок поверх круга*/
+
+
+}
+
+/*<!--foto-->*/
+.img-crosi img {
+	max-width: 100%;
+	transition: 0.8s;
+	/*flex: 0 1 150px;*/
+
+}
+
+.img-crosi img:hover {
+	transform: translateY(-30px);
+	/* поднимаем вверх кроссовок при наведении*/
+	/*transform: rotateZ(360deg);*/
+}
+
+
+.img-crosi p {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 15x;
+	color: #fff;
+
+	position: absolute;
+	top: 15px;
+	right: 20px;
+	z-index: 3;
+}
+
+
+/*-------------content-----------------*/
+.content {
+	display: flex;
+	/* что бы весь блок "content" встал по ЦЕНТРУ */
+	flex-direction: column;
+	/* что бы весь блок "content" встал по ЦЕНТРУ */
+	justify-content: center;
+	/* что бы весь блок "content" встал по ЦЕНТРУ */
+	align-items: center;
+	/* что бы весь текст "content" встал по ЦЕНТРУ */
+
+	visibility: hidden;
+	/*спрятали блок с текстом*/
+	transition: 0.5s;
+	opacity: 0;
+	/*дает плавность появления */
+}
+
+.card:hover .content {
+	visibility: visible;
+	/*показали блок с текстом*/
+	transition-delay: 0.5s;
+	/*задержка в появлении блока с текстом */
+	opacity: 1;
+	/*дает плавность появления */
+	transform: translateY(-25px);
+	/* поднимаем вверх блок с текстом при наведении*/
+}
+
+.card:hover a {
+	visibility: visible;
+	/*показали блок с текстом*/
+	transition-delay: 0.8s;
+	/*задержка в появлении блока с текстом */
+	opacity: 1;
+	/*transform: translateY(-2px); /* поднимаем вверх блок с текстом при наведении*/
+	transform: rotateY(360deg);
+}
+
+
+h2
+
+/*Nike Shoes*/
+	{
+	font-size: 25px;
+	margin-bottom: 20px;
+}
+
+
+.nike {
+	position: absolute;
+	top: 100%;
+	left: 11%;
+	font-size: 70px;
+	letter-spacing: 20px;
+	font-weight: 900;
+	visibility: visible;
+	opacity: 1;
+	transition: 0.5s;
+}
+
+.card:hover .nike {
+	visibility: hidden;
+	/*показали text nike*/
+	transition-delay: 0.2s;
+	/*задержка в появлении блока с текстом */
+	opacity: 0;
+}
+
+
+
+/*---size---*/
+.size {
+	display: flex;
+	/*надпись ставим по центру */
+	justify-content: center;
+	/*надпись ставим по центру */
+	align-items: center;
+	/*надпись ставим по центру */
+	margin-right: 20px;
+	margin-bottom: 15px;
+
+}
+
+.color h3,
+.size h3 {
+	/*обращаемся к текстам -color- -size-*/
+	color: #fff;
+	font-weight: 300;
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	margin-right: 20px;
+	line-height: 120%;
+	/*текст по центру квадрата*/
+}
+
+.size span {
+	background: linear-gradient(to bottom right, #ffff99 0%, #cc00ff 100%);
+	width: 26px;
+	height: 26px;
+	display: inline-block;
+	text-align: center;
+	line-height: 26px;
+	/*текст по центру квадрата*/
+	margin: 0 5px;
+	/*отступы между квадратиками*/
+	border-radius: 5px;
+}
+
+span {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.size span:hover {
+	cursor: pointer;
+}
+
+
+/*-----------color------------*/
+.color {
+	display: flex;
+	/*надпись ставим по центру */
+	justify-content: center;
+	/*надпись ставим по центру */
+	align-items: center;
+	/*надпись ставим по центру */
+	margin-bottom: 15px;
+}
+
+
+
+/*Color : 
+.color h3	{}*/
+
+.color span {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	margin: 0 5px;
+	/*отступы между квадратиками*/
+	transition: 0.5s;
+}
+
+
+.color span:nth-child(2) {
+	background: linear-gradient(to bottom right, #ccff33 0%, #ff0000 100%);
+
+}
+
+.color span:nth-child(2):hover {
+	cursor: pointer;
+	background: linear-gradient(90deg, rgba(193, 199, 227, 1) 0%, rgba(242, 255, 230, 1) 46%, rgba(234, 244, 220, 1) 88%,
+			rgba(177, 252, 70, 1) 100%);
+}
+
+.color span:nth-child(3) {
+	background: linear-gradient(to bottom right, #0000ff 0%, #ff99cc 100%);
+}
+
+.color span:nth-child(4) {
+	background: linear-gradient(to bottom right, #ffff99 0%, #66ffff 100%);
+}
+
+
+
+
+/*---------------buton----------*/
+a
+
+/*Buy Now*/
+	{
+	padding: 10px 25px;
+	/*transform: translateX(85%);/* что бы и кнопка встала по ЦЕНТРУ */
+	display: inline-block;
+	background: linear-gradient(to bottom right, #ffff99 0%, #cc00ff 100%);
+	border-radius: 5px;
+
+	transition: 1s;
+	opacity: 0;
+}
